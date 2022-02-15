@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <form action="/bills/add">
+
+
+        <h2>记账</h2>
+        <tr>
+            <td>类型:</td>
+            <td><input type="radio" id="1" value="1" name="typeid">支出</td>
+            <td><input type="radio" id="2" value="2" name="typeid">收入</td>
+        </tr>
+        </br>
+        <tr>
+            <td>标题</td>
+            <td><input type="text" name="title"></td>
+        </tr>
+        </br>
+        <tr>
+            <td>日期</td>
+            <td><input type="text" name="billtime"></td>
+        </tr>
+        </br>
+        <tr>
+            <td>金额</td>
+            <td><input type="text" name="price"></td>
+        </tr>
+        </br>
+        <tr>
+            <td>说明</td>
+            <td><input type="text" name="explains"></td>
+        </tr>
+        </br>
+        <button><input type="submit"></button>
+
+
+    </form>
+    <div>
+
+
+    <a href="/bills/toall">
+        <button>返回</button>
+    </a>
+    <a href="/bills/toadd">
+        <button>重置</button>
+    </a>
+    </div>
+</center>
+</body>
+</html>

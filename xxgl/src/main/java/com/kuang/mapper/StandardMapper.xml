@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuang.mapper.StandardMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kuang.entity.Standard">
+        <id column="id" property="id" />
+        <result column="std_num" property="stdNum" />
+        <result column="zhname" property="zhname" />
+        <result column="version" property="version" />
+        <result column="keys" property="keys" />
+        <result column="release_date" property="releaseDate" />
+        <result column="impl_date" property="implDate" />
+        <result column="package_pa" property="packagePa" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        `id`,`std_num`,`zhname`,`version`,`keys`,`release_date`,`impl_date`,`package_pa`
+    </sql>
+
+</mapper>

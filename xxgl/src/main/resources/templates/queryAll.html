@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1px">
+    <tr>
+        <th>标准号</th>
+        <th>中文名称</th>
+        <th>版本</th>
+        <th>关键字/词</th>
+        <th>发布日期</th>
+        <th>实施日期</th>
+        <th>附件路径</th>
+
+    </tr>
+    <tr th:each="u:${user}">
+        <td th:text="${u.std_num}"></td>
+        <td th:text="${u.zhname}"></td>
+        <td th:text="${u.VERSION}"></td>
+        <td th:text="${u.keys}"></td>
+        <td th:text="${u.release_date}"></td>
+        <td th:text="${u.impl_date}"></td>
+        <td th:text="${u.package_pa}"></td>
+        <td>
+            <a th:href="|/users/del/${u.id}|">删除</a>
+            <a th:href="|/users/toUpdate/${u.id}|">修改</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

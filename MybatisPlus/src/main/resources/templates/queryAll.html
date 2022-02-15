@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<body>
+<center>
+
+    <h1>标准信息列表</h1>
+</center>
+<form class="form-inline col-lg-3.5  pull-right" >
+    <div class="form-group" >
+        <input type="text" class="form-control" id="exampleInputName2" >
+        <a class="btn btn-default" href="" role="button">提交检索</a>
+        <a class="btn btn-default" href="/toinsert" role="button">新增标准</a>
+        <a class="btn btn-default" href="#" role="button">删除标准</a>
+    </div>
+
+</form>
+    <table class="table table-hover table table-hover" border="1px" >
+        <tr>
+            <th>标准号</th>
+            <th>中文名称</th>
+            <th>版本</th>
+            <th>发布日期</th>
+            <th>实施日期</th>
+            <th>操作</th>
+
+        </tr>
+        <tr th:each="u:${user}">
+            <td th:text="${u.stdnum}"></td>
+            <td th:text="${u.zhname}"></td>
+            <td th:text="${u.versions}"></td>
+            <td th:text="${u.releasedate}"></td>
+            <td th:text="${u.impldate}"></td>
+            <td>
+                <a th:href="|/users/del/${u.id}|">删除</a>
+                <a th:href="|/users/toUpdate/${u.id}|">修改</a>
+            </td>
+        </tr>
+    </table>
+
+
+</body>
+</html>
